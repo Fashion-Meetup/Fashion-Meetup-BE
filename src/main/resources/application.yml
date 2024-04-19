@@ -18,3 +18,8 @@ spring:
       hibernate:
         format_sql: true
 
+
+kakao:
+  client_id: ${kakao_client_id}
+  redirect_uri: ${kakao_redirect_uri}
+  client_secret: ${kakao_client_secret}
