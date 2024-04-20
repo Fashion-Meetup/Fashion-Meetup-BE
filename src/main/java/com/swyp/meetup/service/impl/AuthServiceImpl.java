@@ -3,7 +3,7 @@ package com.swyp.meetup.service.impl;
 import com.swyp.meetup.domain.member.Member;
 import com.swyp.meetup.domain.member.Social;
 import com.swyp.meetup.domain.oauth.OauthClient;
-import com.swyp.meetup.dto.auth.OauthMember;
+import com.swyp.meetup.domain.oauth.dto.OauthMember;
 import com.swyp.meetup.repository.MemberRepository;
 import com.swyp.meetup.service.AuthService;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.swyp.meetup.dto.auth;
+package com.swyp.meetup.domain.oauth.dto;
 
 import com.swyp.meetup.domain.member.Authority;
 import com.swyp.meetup.domain.member.Member;
