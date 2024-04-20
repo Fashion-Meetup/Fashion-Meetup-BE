@@ -1,4 +1,4 @@
-package com.swyp.meetup.domain.member;
+package com.swyp.meetup.domain.meet;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,31 +14,37 @@ import java.util.Objects;
 
 @Entity
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-public class Member {
+public class Meet {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 50, nullable = false)
-    private String nickname;
+    @Column(length = 1000, nullable = false)
+    private String title;
 
-    @Column(length = 100, nullable = false)
-    private String email;
+    private LocalDateTime meetTime;
+
+    @Column(length = 50)
+    private String region;
 
     @Column(length = 1000)
+    private String address;
+
+    private Byte maximum;
+
+    @Column(length = 2000)
     private String introduce;
 
     @Enumerated(EnumType.STRING)
-    private Authority authority;
+    private MeetStatus status;
 
-    @Enumerated(EnumType.STRING)
-    private Social social;
+    @Column(length = 100)
+    private String image;
 
-    @Enumerated(EnumType.STRING)
-    private MemberStatus status;
+    private Long masterId;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -50,8 +56,8 @@ public class Member {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Member member = (Member) o;
-        return Objects.equals(id, member.id);
+        Meet meet = (Meet) o;
+        return Objects.equals(id, meet.id);
     }
 
     @Override

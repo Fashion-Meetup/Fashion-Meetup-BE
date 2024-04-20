@@ -1,4 +1,4 @@
-package com.swyp.meetup.dto.auth;
+package com.swyp.meetup.domain.oauth.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

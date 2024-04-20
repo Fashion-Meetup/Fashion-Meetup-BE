@@ -2,8 +2,8 @@ package com.swyp.meetup.domain.oauth;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.swyp.meetup.dto.auth.KakaoTokenResponse;
-import com.swyp.meetup.dto.auth.OauthMember;
+import com.swyp.meetup.domain.oauth.dto.KakaoTokenResponse;
+import com.swyp.meetup.domain.oauth.dto.OauthMember;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
