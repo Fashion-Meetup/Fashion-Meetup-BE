@@ -1,8 +1,8 @@
 package com.swyp.meetup.domain.member;
 
-import com.swyp.meetup.domain.member.MemberTagId;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -11,5 +11,9 @@ import lombok.NoArgsConstructor;
 public class MemberTagMap {
     @EmbeddedId
     private MemberTagId id;
+
+    public static MemberTagMap from(Long memberId, Long styleTagId){
+        return new MemberTagMap(new MemberTagId(memberId, styleTagId));
+    }
 
 }
