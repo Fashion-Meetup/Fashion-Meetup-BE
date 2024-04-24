@@ -37,7 +37,7 @@ public class SecurityConfig {
                                 .accessDeniedHandler(customAccessDeniedHandler)
                 )
                 .authorizeHttpRequests(auth->auth
-                        .requestMatchers("/actuator","/api/auth/login/**").permitAll()
+                        .requestMatchers("/actuator/**","/api/auth/login/**","/favicon.ico").permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();
