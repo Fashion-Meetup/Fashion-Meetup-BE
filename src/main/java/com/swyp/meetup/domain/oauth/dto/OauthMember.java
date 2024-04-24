@@ -11,12 +11,10 @@ import lombok.Getter;
 @Getter
 public class OauthMember {
     private String email;
-    private String nickname;
 
     public Member toEntity(Social social){
         return Member.builder()
                 .email(this.email)
-                .nickname(this.nickname)
                 .authority(Authority.ROLE_USER)
                 .social(social)
                 .status(MemberStatus.USER)

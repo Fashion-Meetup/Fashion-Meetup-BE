@@ -8,5 +8,5 @@ import lombok.Getter;
 public enum Authority {
     ROLE_USER("ROLE_USER"),
     ROLE_ADMIN("ROLE_ADMIN");
-    private String status;
+    private String value;
 }
