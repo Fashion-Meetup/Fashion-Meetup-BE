@@ -60,13 +60,9 @@ public class KakaoClient implements OauthClient{
                 .block();
 
         String email = "";
-        String nickname = "";
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode rootNode = mapper.readTree(str);
-
-            nickname = rootNode.path("properties").path("nickname").asText();
-
             email = rootNode.path("kakao_account").path("email").asText();
 
         } catch (Exception e) {
@@ -74,7 +70,7 @@ public class KakaoClient implements OauthClient{
             return null;
         }
 
-        return new OauthMember(email, nickname);
+        return new OauthMember(email);
 
     }
 }

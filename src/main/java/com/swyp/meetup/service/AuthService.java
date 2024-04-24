@@ -1,6 +1,9 @@
 package com.swyp.meetup.service;
 
+import com.swyp.meetup.domain.oauth.dto.LoginResponse;
+import jakarta.servlet.http.HttpServletResponse;
+
 public interface AuthService {
-    public abstract String kakaoLogin(String code);
+    public abstract LoginResponse kakaoLogin(String code, HttpServletResponse response);
 
 }

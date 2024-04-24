@@ -1,10 +1,7 @@
 package com.swyp.meetup.domain.member;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -22,7 +19,7 @@ public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50)
     private String nickname;
 
     @Column(length = 100, nullable = false)
@@ -39,6 +36,9 @@ public class Member {
 
     @Enumerated(EnumType.STRING)
     private MemberStatus status;
+
+    @Column(length = 500) @Setter
+    private String refreshToken;
 
     @CreatedDate
     private LocalDateTime createdAt;
