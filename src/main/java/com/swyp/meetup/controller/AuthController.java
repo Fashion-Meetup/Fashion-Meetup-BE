@@ -24,9 +24,6 @@ public class AuthController {
             HttpServletResponse response
     ) {
         LoginResponse loginResponse = authService.kakaoLogin(code, response);
-
-        System.out.println(loginResponse);
-
         return ResponseEntity.ok()
                 .body(Api.response(AuthResponseCode.LOGIN_SUCCESS, loginResponse));
     }
